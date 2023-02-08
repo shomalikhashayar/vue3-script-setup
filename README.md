@@ -1,4 +1,5 @@
 # vue3-script-setup
+In this project I try to show you difference between  Composition api & Script Setup in Vue3.
 
 ## Project setup
 ```
