@@ -4,6 +4,12 @@
 
 <!-- script setup -->
 <script setup>
+const props = defineProps({
+  textWillShowOnButton: {
+    type: String,
+    default: "View My GitHub Profile",
+  },
+});
 const openGitHubProfile = () => {
   window.open("https://github.com/shomalikhashayar");
 };
