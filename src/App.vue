@@ -17,7 +17,7 @@
     </h1>
   </div>
   <div class="viewGitHubProfileButton">
-    <viewGitHubProfileButton />
+    <viewGitHubProfileButton @buttonClicked="showAlert" />
   </div>
 </template>
 
@@ -34,8 +34,12 @@ const whenMouseOverHeading = () => {
 const whenMouseOutHeading = () => {
   bio.value = "Hello, My name is Khashayar Shomali, I'm 22 years old.";
 };
+const showAlert = () => {
+  window.open("https://github.com/shomalikhashayar");
+};
 </script>
 
+<!-- composition api -->
 <!--
 <script>
 import { ref } from "@vue/reactivity";
@@ -54,10 +58,15 @@ export default {
       bio.value = "Hello, My name is Khashayar Shomali, I'm 22 years old.";
     };
 
+    const showAlert = () => {
+      window.open("https://github.com/shomalikhashayar");
+    };
+
     return {
       bio,
       whenMouseOverHeading,
       whenMouseOutHeading,
+      showAlert,
     };
   },
   components: {

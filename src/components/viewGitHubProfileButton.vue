@@ -1,8 +1,9 @@
 <template>
-  <button @click="openGitHubProfile">{{ textWillShowOnButton }}</button>
+  <button @click="$emit('buttonClicked')">{{ textWillShowOnButton }}</button>
 </template>
 
 <!-- script setup -->
+
 <script setup>
 const props = defineProps({
   textWillShowOnButton: {
@@ -10,28 +11,30 @@ const props = defineProps({
     default: "View My GitHub Profile",
   },
 });
-const openGitHubProfile = () => {
-  window.open("https://github.com/shomalikhashayar");
-};
+// const openGitHubProfile = () => {
+//   window.open("https://github.com/shomalikhashayar");
+// };
+const emit = defineEmits(["buttonCliked"]);
 </script>
 
 <!-- composition api -->
 <!--
 <script>
 export default {
-  setup() {
-    const openGitHubProfile = () => {
-      window.open("https://github.com/shomalikhashayar");
-    };
+  // setup() {
+  //   const openGitHubProfile = () => {
+  //     window.open("https://github.com/shomalikhashayar");
+  //   };
 
-    return { openGitHubProfile };
-  },
+  //   return { openGitHubProfile };
+  // },
   props: {
     textWillShowOnButton: {
       type: String,
       default: "View My GitHub Profile",
     },
   },
+  emits: ['buttonClicked']
 };
 </script>
 -->
