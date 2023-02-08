@@ -16,10 +16,14 @@
       {{ bio }}
     </h1>
   </div>
+  <div class="viewGitHubProfileButton">
+    <viewGitHubProfileButton />
+  </div>
 </template>
 
 <script setup>
 import { ref } from "@vue/reactivity";
+import viewGitHubProfileButton from "@/components/viewGitHubProfileButton.vue";
 
 const bio = ref("Hello, My name is Khashayar Shomali, I'm 22 years old.");
 
@@ -35,6 +39,7 @@ const whenMouseOutHeading = () => {
 <!--
 <script>
 import { ref } from "@vue/reactivity";
+import viewGitHubProfileButton from "@/components/viewGitHubProfileButton.vue";
 
 export default {
   setup() {
@@ -55,9 +60,13 @@ export default {
       whenMouseOutHeading,
     };
   },
+  components: {
+    viewGitHubProfileButton,
+  },
 };
 </script>
 -->
+
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
 
@@ -66,6 +75,7 @@ body {
   justify-content: center;
   margin-top: 50px;
   background-color: bisque;
+  font-family: "Rubik", sans-serif;
 }
 
 .bio {
@@ -78,8 +88,44 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 12px;
-  font-family: "Rubik", sans-serif;
   cursor: pointer;
+  margin-bottom: 50px;
+}
+
+.khashayar-picture img {
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+  border: 4px solid orange;
+  box-shadow: 0 4px 12px 0 rgba(255, 143, 15, 0.719);
+  cursor: pointer;
+}
+
+.khashayar-picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.viewGitHubProfileButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.viewGitHubProfileButton button {
+  background-color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 9px;
+  padding: 20px 40px;
+  cursor: pointer;
+  font-size: 22px;
+  font-weight: bold;
+}
+.viewGitHubProfileButton button:hover {
+  background-color: rgb(255, 136, 0);
+  color: rgb(255, 255, 255);
 }
 
 @media screen and (max-width: 600px) {
@@ -98,20 +144,10 @@ body {
     text-align: center;
     line-height: 30px;
   }
-}
-.khashayar-picture img {
-  border-radius: 50%;
-  width: 250px;
-  height: 250px;
-  border: 4px solid orange;
-  box-shadow: 0 4px 12px 0 rgba(255, 143, 15, 0.719);
-  cursor: pointer;
-}
 
-.khashayar-picture {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 50px;
+  .viewGitHubProfileButton button {
+    padding: 15px 30px;
+    font-size: 16px;
+  }
 }
 </style>
